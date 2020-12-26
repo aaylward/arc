@@ -11,7 +11,11 @@
 
 /*** data ***/
 
-struct termios original_termios;
+struct editorConfig {
+  struct termios original_termios;
+};
+
+struct editorConfig config;
 
 /*** terminal ***/
 
@@ -32,18 +36,18 @@ void die(const char *s) {
 }
 
 void disableRawMode() {
-  if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &original_termios) == -1) {
+  if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &config.original_termios) == -1) {
     die("tcsetattr");
   }
 }
 
 void enableRawMode() {
-  if (tcgetattr(STDIN_FILENO, &original_termios) == -1) {
+  if (tcgetattr(STDIN_FILENO, &config.original_termios) == -1) {
     die("tcgetattr");
   }
   atexit(disableRawMode);
 
-  struct termios raw = original_termios;
+  struct termios raw = config.original_termios;
 
   // BRKINT: break can send interrupt
   // ICRNL: ctrl-m
