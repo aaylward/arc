@@ -1,3 +1,5 @@
-# liledit
+# ARC
 
-a little project based on https://github.com/antirez/kilo
+Andy's vimrc minus vim
+
+based on https://github.com/antirez/kilo
