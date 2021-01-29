@@ -142,7 +142,7 @@ void initEditor() {
   }
 }
 
-int main() {
+int main(void) {
   enableRawMode();
   initEditor();
 

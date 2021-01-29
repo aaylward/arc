@@ -1,2 +1,7 @@
-liledit: liledit.c
-	$(CC) liledit.c -o liledit -Wall -Wextra -pedantic -std=c17
+all: arc
+
+arc: arc.c
+	$(CC) arc.c -o arc -Wall -Wextra -pedantic -std=c17
+
+clean:
+	rm arc
