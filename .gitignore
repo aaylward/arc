@@ -1,0 +1,13 @@
+Makefile
+.idea
+compile
+config.log
+config.status
+aclocal.m4
+configure
+depcomp
+install-sh
+Makefile.in
+missing
+autom4te.cache/
+src/.deps/
